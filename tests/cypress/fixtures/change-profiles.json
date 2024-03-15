@@ -1,0 +1,6 @@
+{
+    "name": "User Updated",
+    "email": "user-updated@gmail.com",
+    "invalidEmail": "user.email",
+    "existingEmail": "superadmin@gmail.com"
+}

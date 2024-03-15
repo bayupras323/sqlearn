@@ -1,0 +1,99 @@
+describe("Testing Logout Page", () => {
+    
+    // Positive Case
+    it('superadmin can logout succesfully', () => {
+        cy.visit('/');
+        cy.get('[data-id="email"]')
+            .focus()
+            .should('be.visible')
+            .clear()
+            .type('superadmin@gmail.com')
+            .blur();
+        cy.get('[data-id="password"]')
+            .focus()
+            .should('be.visible')
+            .clear()
+            .type('password')
+            .blur();
+        cy.get('[data-id="login"]')
+            .should('be.visible')
+            .click();
+        cy.get('[data-id="nav-greetings"]')
+            .should('be.visible')
+            .click();
+        cy.get('[data-id="logout"]')
+            .should('be.visible')
+            .click();
+    });
+
+    it('user can logout succesfully', () => {
+        cy.visit('/');
+        cy.get('[data-id="email"]')
+            .focus()
+            .should('be.visible')
+            .clear()
+            .type('student1@gmail.com')
+            .blur();
+        cy.get('[data-id="password"]')
+            .focus()
+            .should('be.visible')
+            .clear()
+            .type('password')
+            .blur();
+        cy.get('[data-id="login"]')
+            .should('be.visible')
+            .click();
+        cy.get('[data-id="nav-greetings"]')
+            .should('be.visible')
+            .click();
+        cy.get('[data-id="logout"]')
+            .should('be.visible')
+            .click();
+    });
+
+    it('switching account', () => {
+        cy.visit('/');
+        cy.get('[data-id="email"]')
+            .focus()
+            .should('be.visible')
+            .clear()
+            .type('superadmin@gmail.com')
+            .blur();
+        cy.get('[data-id="password"]')
+            .focus()
+            .should('be.visible')
+            .clear()
+            .type('password')
+            .blur();
+        cy.get('[data-id="login"]')
+            .should('be.visible')
+            .click();
+        cy.get('[data-id="nav-greetings"]')
+            .should('be.visible')
+            .click();
+        cy.get('[data-id="logout"]')
+            .should('be.visible')
+            .click();
+        cy.get('[data-id="email"]')
+            .focus()
+            .should('be.visible')
+            .clear()
+            .type('student1@gmail.com')
+            .blur();
+        cy.get('[data-id="password"]')
+            .focus()
+            .should('be.visible')
+            .clear()
+            .type('password')
+            .blur();
+        cy.get('[data-id="login"]')
+            .should('be.visible')
+            .click();
+        cy.get('[data-id="nav-greetings"]')
+            .should('be.visible')
+            .click();
+        cy.get('[data-id="logout"]')
+            .should('be.visible')
+            .click();
+    });
+});
